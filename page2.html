@@ -1,15 +1,138 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Page 2</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+
+      height:100vh;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      background: linear-gradient(135deg,#020617,#111827);
+
+      font-family:Poppins, Arial, sans-serif;
+
+      color:white;
+
+      overflow:hidden;
+    }
+
+    .card{
+
+      width:350px;
+
+      padding:40px;
+
+      text-align:center;
+
+      border-radius:25px;
+
+      background: rgba(255,255,255,0.08);
+
+      backdrop-filter: blur(10px);
+
+      box-shadow:0 0 30px rgba(0,0,0,0.5);
+
+      animation: float 3s ease-in-out infinite;
+    }
+
+    h1{
+      font-size:38px;
+      margin-bottom:15px;
+    }
+
+    p{
+      font-size:18px;
+      line-height:1.6;
+      opacity:0.9;
+      margin-bottom:25px;
+    }
+
+    button{
+
+      padding:14px 24px;
+
+      border:none;
+
+      border-radius:14px;
+
+      background:#38bdf8;
+
+      color:black;
+
+      font-size:17px;
+
+      font-weight:bold;
+
+      cursor:pointer;
+
+      transition:0.3s;
+    }
+
+    button:hover{
+      transform:scale(1.08);
+    }
+
+    @keyframes float{
+
+      0%{
+        transform:translateY(0px);
+      }
+
+      50%{
+        transform:translateY(-10px);
+      }
+
+      100%{
+        transform:translateY(0px);
+      }
+    }
+
+  </style>
+
 </head>
 
-<body style="text-align:center; font-family:Arial; padding-top:100px;">
+<body>
 
-  <h1>You have been sent here!</h1>
-  <p>This shows that the website is working perfectly as it should.</p>
+  <div class="card">
 
-  <a href="index.html">Go Back</a>
+    <h1>You have been sent here!</h1>
+
+    <p>
+      This shows that the website is working perfectly as it should.
+    </p>
+
+    <button onclick="goBack()">
+      Go Back
+    </button>
+
+  </div>
+
+  <script>
+
+    function goBack(){
+
+      window.location.href = "index.html";
+
+    }
+
+  </script>
 
 </body>
+
 </html>
