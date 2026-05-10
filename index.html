@@ -1,51 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>World Meter</title>
 
   <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
     body{
-      background:#c2a878;
-      color:blue;
-      font-family:Arial;
+      height:100vh;
+
       display:flex;
       justify-content:center;
       align-items:center;
-      height:100vh;
-      margin:0;
+
+      background: linear-gradient(135deg,#0f172a,#1e3a8a);
+
+      font-family: Poppins, Arial, sans-serif;
+
+      overflow:hidden;
+      color:white;
     }
 
-    . hexagon{
+    .card{
+
+      width:340px;
+
+      padding:40px;
+
       text-align:center;
-      background:#ec4899;
-      padding:100px;
-      border-radius:50px;
+
+      border-radius:25px;
+
+      background: rgba(255,255,255,0.08);
+
+      backdrop-filter: blur(10px);
+
+      box-shadow:0 0 25px rgba(0,0,0,0.4);
+
+      animation: float 3s ease-in-out infinite;
+    }
+
+    h1{
+      font-size:42px;
+      margin-bottom:15px;
+    }
+
+    p{
+      font-size:18px;
+      opacity:0.9;
+      margin-bottom:25px;
+      line-height:1.5;
     }
 
     button{
-      padding:15px 30px;
+
+      padding:14px 24px;
+
       border:none;
-      border-radius:30px;
-      background:#10b981;
-      margin-top:20px;
+
+      border-radius:14px;
+
+      background:#38bdf8;
+
+      color:black;
+
+      font-size:18px;
+
+      font-weight:bold;
+
+      cursor:pointer;
+
+      transition:0.3s;
     }
+
+    button:hover{
+      transform:scale(1.08);
+    }
+
+    @keyframes float{
+
+      0%{
+        transform: translateY(0px);
+      }
+
+      50%{
+        transform: translateY(-10px);
+      }
+
+      100%{
+        transform: translateY(0px);
+      }
+    }
+
   </style>
+
 </head>
 
 <body>
 
-<div class="hexagon">
-  <h1>Welcome</h1>
+  <div class="card">
 
-  <p>This website is a test.</p>
+    <h1>Welcome 🌏</h1>
 
-  <button onclick="goToPage()">Click Me</button>
+    <p>
+      I built thsi website as a test to see whether it works or not.
+    </p>
 
-<script>
-function goToPage() {
-  window.location.href = "page2.html";
-}
-</script>
+    <button onclick="goToPage()">
+      Explore
+    </button>
+
+  </div>
+
+  <script>
+
+    function goToPage(){
+
+      window.location.href = "page2.html";
+
+    }
+
+  </script>
 
 </body>
+
 </html>
