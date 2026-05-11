@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Page 2</title>
+  <title>Cyber Space</title>
 
   <style>
 
@@ -23,44 +23,70 @@
       justify-content:center;
       align-items:center;
 
-      background: linear-gradient(135deg,#020617,#111827);
-
-      font-family:Poppins, Arial, sans-serif;
-
-      color:white;
+      background:black;
 
       overflow:hidden;
+
+      font-family:monospace;
+
+      color:#00ff99;
     }
 
-    .card{
+    .background{
 
-      width:350px;
+      position:absolute;
 
-      padding:40px;
+      width:100%;
+      height:100%;
+
+      background:
+      radial-gradient(circle at top left,#00ff9940,transparent 30%),
+      radial-gradient(circle at bottom right,#00ffff30,transparent 30%);
+
+      animation:pulse 4s infinite alternate;
+    }
+
+    .terminal{
+
+      position:relative;
+
+      z-index:2;
+
+      width:360px;
+
+      padding:35px;
+
+      border:2px solid #00ff99;
+
+      border-radius:18px;
+
+      background:rgba(0,0,0,0.8);
+
+      box-shadow:
+      0 0 20px #00ff99,
+      0 0 40px #00ff9950;
 
       text-align:center;
-
-      border-radius:25px;
-
-      background: rgba(255,255,255,0.08);
-
-      backdrop-filter: blur(10px);
-
-      box-shadow:0 0 30px rgba(0,0,0,0.5);
-
-      animation: float 3s ease-in-out infinite;
     }
 
     h1{
+
       font-size:38px;
-      margin-bottom:15px;
+
+      margin-bottom:20px;
+
+      text-shadow:0 0 10px #00ff99;
     }
 
     p{
-      font-size:18px;
+
+      font-size:17px;
+
       line-height:1.6;
-      opacity:0.9;
-      margin-bottom:25px;
+
+      margin-bottom:30px;
+
+      color:#9affd2;
     }
 
     button{
@@ -69,9 +95,9 @@
 
       border:none;
 
-      border-radius:14px;
+      border-radius:10px;
 
-      background:#38bdf8;
+      background:#00ff99;
 
       color:black;
 
@@ -85,21 +111,20 @@
     }
 
     button:hover{
+
       transform:scale(1.08);
+
+      box-shadow:0 0 15px #00ff99;
     }
 
-    @keyframes float{
+    @keyframes pulse{
 
-      0%{
-        transform:translateY(0px);
+      from{
+        opacity:0.5;
       }
 
-      50%{
-        transform:translateY(-10px);
-      }
-
-      100%{
-        transform:translateY(0px);
+      to{
+        opacity:1;
       }
     }
 
@@ -109,16 +134,19 @@
 
 <body>
 
-  <div class="card">
+  <div class="background"></div>
 
-    <h1>You have been sent here!</h1>
+  <div class="terminal">
+
+    <h1>ACCESS GRANTED</h1>
 
     <p>
-      This shows that the website is working perfectly as it should.
+      Welcome to the second dimension of your website.<br>
+      This page has a cyberpunk hacker-style interface.
     </p>
 
     <button onclick="goBack()">
-      Go Back
+      RETURN
     </button>
 
   </div>
