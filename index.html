@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Nova Markets</title>
+  <title>ORVEX — Future Intelligence</title>
 
   <style>
 
@@ -20,17 +18,78 @@
 
       font-family:Arial, sans-serif;
 
-      color:white;
-
-      overflow-x:hidden;
-
       background:
       linear-gradient(
       180deg,
       #020617 0%,
-      #0f172a 40%,
-      #111827 100%
+      #0f172a 35%,
+      #111827 70%,
+      #020617 100%
       );
+
+      color:white;
+
+      overflow-x:hidden;
+    }
+
+    nav{
+
+      position:fixed;
+
+      top:0;
+      left:0;
+
+      width:100%;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      padding:22px 8%;
+
+      background:rgba(2,6,23,0.55);
+
+      backdrop-filter:blur(14px);
+
+      border-bottom:1px solid rgba(255,255,255,0.06);
+
+      z-index:1000;
+    }
+
+    .logo{
+
+      font-size:28px;
+
+      font-weight:bold;
+
+      letter-spacing:2px;
+
+      color:#38bdf8;
+    }
+
+    .nav-links{
+
+      display:flex;
+
+      gap:25px;
+    }
+
+    .nav-links a{
+
+      text-decoration:none;
+
+      color:white;
+
+      opacity:0.8;
+
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+
+      opacity:1;
+
+      color:#38bdf8;
     }
 
     section{
@@ -44,7 +103,7 @@
 
       text-align:center;
 
-      padding:100px 20px;
+      padding:120px 20px;
 
       position:relative;
     }
@@ -55,8 +114,8 @@
 
       position:absolute;
 
-      width:500px;
-      height:500px;
+      width:600px;
+      height:600px;
 
       background:#38bdf822;
 
@@ -64,8 +123,8 @@
 
       filter:blur(120px);
 
-      top:-150px;
-      left:-150px;
+      top:-250px;
+      left:-200px;
     }
 
     .hero::after{
@@ -74,8 +133,8 @@
 
       position:absolute;
 
-      width:450px;
-      height:450px;
+      width:500px;
+      height:500px;
 
       background:#7c3aed22;
 
@@ -83,20 +142,26 @@
 
       filter:blur(120px);
 
-      bottom:-150px;
-      right:-150px;
+      bottom:-200px;
+      right:-200px;
     }
 
-    h1{
+    .hero h1{
 
-      font-size:76px;
+      font-size:95px;
 
-      margin-bottom:20px;
+      max-width:1000px;
+
+      line-height:1.1;
 
       z-index:2;
+
+      animation:fadeUp 1s ease;
     }
 
-    .subtitle{
+    .hero p{
+
+      margin-top:30px;
 
       max-width:760px;
 
@@ -104,12 +169,16 @@
 
       line-height:1.8;
 
-      opacity:0.85;
+      opacity:0.82;
 
       z-index:2;
+
+      animation:fadeUp 1.4s ease;
     }
 
-    .buttons{
+    .hero-buttons{
+
+      margin-top:45px;
 
       display:flex;
 
@@ -119,18 +188,16 @@
 
       justify-content:center;
 
-      margin-top:45px;
-
       z-index:2;
     }
 
     button{
 
-      padding:16px 30px;
+      padding:16px 32px;
 
       border:none;
 
-      border-radius:16px;
+      border-radius:18px;
 
       font-size:18px;
 
@@ -138,7 +205,7 @@
 
       cursor:pointer;
 
-      transition:0.3s;
+      transition:0.35s;
     }
 
     .primary{
@@ -150,9 +217,9 @@
 
     .primary:hover{
 
-      transform:scale(1.07);
+      transform:translateY(-4px) scale(1.04);
 
-      box-shadow:0 0 25px rgba(56,189,248,0.5);
+      box-shadow:0 0 30px rgba(56,189,248,0.45);
     }
 
     .secondary{
@@ -166,46 +233,66 @@
 
     .secondary:hover{
 
-      transform:scale(1.07);
+      transform:translateY(-4px) scale(1.04);
 
       background:rgba(255,255,255,0.08);
     }
 
     .scroll{
 
-      margin-top:60px;
+      margin-top:70px;
 
-      font-size:14px;
+      font-size:13px;
 
-      letter-spacing:4px;
+      letter-spacing:5px;
 
-      opacity:0.6;
+      opacity:0.5;
 
       animation:bounce 2s infinite;
     }
 
     .divider{
 
-      width:80%;
+      width:85%;
 
       height:1px;
 
       margin:auto;
 
-      background:rgba(255,255,255,0.08);
+      background:rgba(255,255,255,0.06);
     }
 
-    .features{
+    .section-title{
+
+      font-size:60px;
+
+      margin-bottom:20px;
+    }
+
+    .section-subtitle{
+
+      max-width:760px;
+
+      font-size:22px;
+
+      line-height:1.8;
+
+      opacity:0.82;
+
+      margin-bottom:70px;
+    }
+
+    .cards{
 
       width:100%;
 
+      max-width:1200px;
+
       display:grid;
 
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 
-      gap:25px;
-
-      max-width:1100px;
+      gap:30px;
     }
 
     .card{
@@ -214,25 +301,27 @@
 
       border:1px solid rgba(255,255,255,0.08);
 
-      backdrop-filter:blur(10px);
+      border-radius:28px;
 
-      border-radius:25px;
+      padding:40px 35px;
 
-      padding:35px;
+      backdrop-filter:blur(12px);
 
       transition:0.4s;
+
+      text-align:left;
     }
 
     .card:hover{
 
-      transform:translateY(-10px);
+      transform:translateY(-12px);
 
-      box-shadow:0 0 30px rgba(56,189,248,0.12);
+      box-shadow:0 0 35px rgba(56,189,248,0.14);
     }
 
-    .card h2{
+    .card h3{
 
-      font-size:32px;
+      font-size:34px;
 
       margin-bottom:18px;
 
@@ -243,44 +332,119 @@
 
       font-size:18px;
 
-      line-height:1.8;
+      line-height:1.9;
 
-      opacity:0.85;
+      opacity:0.82;
     }
 
-    .info-box{
+    .stats{
+
+      width:100%;
+
+      max-width:1200px;
+
+      display:grid;
+
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+      gap:25px;
+    }
+
+    .stat-box{
+
+      padding:45px 30px;
+
+      border-radius:28px;
+
+      background:rgba(255,255,255,0.04);
+
+      border:1px solid rgba(255,255,255,0.06);
+
+      backdrop-filter:blur(12px);
+    }
+
+    .stat-number{
+
+      font-size:62px;
+
+      font-weight:bold;
+
+      color:#38bdf8;
+
+      margin-bottom:10px;
+    }
+
+    .stat-label{
+
+      font-size:18px;
+
+      opacity:0.78;
+    }
+
+    .cta-box{
 
       width:90%;
 
-      max-width:900px;
+      max-width:1000px;
 
-      padding:55px 35px;
+      padding:80px 40px;
 
-      border-radius:30px;
+      border-radius:40px;
 
-      background:rgba(255,255,255,0.05);
-
-      backdrop-filter:blur(12px);
+      background:
+      linear-gradient(
+      135deg,
+      rgba(56,189,248,0.12),
+      rgba(124,58,237,0.12)
+      );
 
       border:1px solid rgba(255,255,255,0.08);
 
-      box-shadow:0 0 35px rgba(255,255,255,0.05);
+      backdrop-filter:blur(12px);
     }
 
-    .info-box h2{
+    .cta-box h2{
 
-      font-size:50px;
+      font-size:64px;
 
-      margin-bottom:20px;
+      margin-bottom:25px;
     }
 
-    .info-box p{
+    .cta-box p{
 
       font-size:22px;
 
-      line-height:1.9;
+      line-height:1.8;
 
-      opacity:0.85;
+      opacity:0.84;
+
+      max-width:760px;
+
+      margin:auto;
+    }
+
+    footer{
+
+      padding:40px 20px;
+
+      text-align:center;
+
+      opacity:0.6;
+
+      border-top:1px solid rgba(255,255,255,0.06);
+    }
+
+    @keyframes fadeUp{
+
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
     }
 
     @keyframes bounce{
@@ -295,30 +459,42 @@
     }
 
   </style>
-
 </head>
 
 <body>
 
+  <nav>
+
+    <div class="logo">ORVEX</div>
+
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#stats">Analytics</a>
+      <a href="#future">Future</a>
+    </div>
+
+  </nav>
+
+
   <section class="hero">
 
-    <h1>Nova Markets</h1>
+    <h1>
+      Intelligence For The Next Digital Era
+    </h1>
 
-    <p class="subtitle">
-
-      A futuristic financial dashboard tracking crypto markets,
-      digital assets, and market intelligence in real time.
-
+    <p>
+      ORVEX is a futuristic analytics platform combining artificial intelligence,
+      financial intelligence, and immersive web experiences into one modern ecosystem.
     </p>
 
-    <div class="buttons">
+    <div class="hero-buttons">
 
-      <button class="primary" onclick="openDashboard()">
-        Open Dashboard
+      <button class="primary" onclick="scrollSection('features')">
+        Explore Platform
       </button>
 
-      <button class="secondary" onclick="scrollInfo()">
-        Learn More
+      <button class="secondary" onclick="scrollSection('future')">
+        View Vision
       </button>
 
     </div>
@@ -329,41 +505,50 @@
 
   </section>
 
+
   <div class="divider"></div>
 
-  <section>
 
-    <div class="features">
+  <section id="features">
+
+    <h2 class="section-title">Premium Digital Systems</h2>
+
+    <p class="section-subtitle">
+      Designed with futuristic UI principles, immersive interaction,
+      and scalable modern architecture.
+    </p>
+
+    <div class="cards">
 
       <div class="card">
 
-        <h2>Live Crypto</h2>
+        <h3>AI Analytics</h3>
 
         <p>
-          Track real-time cryptocurrency prices powered by public APIs
-          with instant updates and modern dashboard visuals.
+          Intelligent systems capable of processing live data,
+          generating insights, and visualizing complex information.
         </p>
 
       </div>
 
       <div class="card">
 
-        <h2>Market Data</h2>
+        <h3>Realtime Markets</h3>
 
         <p>
-          Monitor financial information, digital assets,
-          and future integrations for precious metals and analytics.
+          Track financial assets, crypto markets, and digital economies
+          through responsive live dashboards.
         </p>
 
       </div>
 
       <div class="card">
 
-        <h2>Mobile Built</h2>
+        <h3>Future Design</h3>
 
         <p>
-          Fully designed, edited, and deployed directly from a phone
-          using modern web technologies and cloud deployment tools.
+          Cinematic gradients, glassmorphism, motion systems,
+          and modern visual storytelling.
         </p>
 
       </div>
@@ -372,38 +557,83 @@
 
   </section>
 
+
   <div class="divider"></div>
 
-  <section id="info">
 
-    <div class="info-box">
+  <section id="stats">
 
-      <h2>Modern Web Applications</h2>
+    <h2 class="section-title">Global Scale</h2>
+
+    <p class="section-subtitle">
+      Modern web platforms are transforming how information,
+      markets, and intelligence are experienced worldwide.
+    </p>
+
+    <div class="stats">
+
+      <div class="stat-box">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Realtime Connectivity</div>
+      </div>
+
+      <div class="stat-box">
+        <div class="stat-number">AI</div>
+        <div class="stat-label">Enhanced Intelligence</div>
+      </div>
+
+      <div class="stat-box">
+        <div class="stat-number">∞</div>
+        <div class="stat-label">Scalable Possibilities</div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <div class="divider"></div>
+
+
+  <section id="future">
+
+    <div class="cta-box">
+
+      <h2>
+        The Future Is Being Built Now
+      </h2>
 
       <p>
-
-        Websites are evolving into full applications capable of displaying
-        live financial data, analytics, dashboards, and interactive systems.
-        This project combines frontend development, APIs, and modern UI design
-        into a real market-focused web experience.
-
+        Premium digital experiences are no longer limited to giant companies.
+        With modern web technologies, creativity and vision can now create products,
+        brands, and platforms directly from anywhere.
       </p>
+
+      <div style="margin-top:40px;">
+
+        <button class="primary">
+          Enter ORVEX
+        </button>
+
+      </div>
 
     </div>
 
   </section>
+
+
+  <footer>
+
+    ORVEX © 2026 — Future Intelligence Platform
+
+  </footer>
+
 
   <script>
 
-    function openDashboard(){
+    function scrollSection(id){
 
-      window.location.href = "page2.html";
-
-    }
-
-    function scrollInfo(){
-
-      document.getElementById("info").scrollIntoView({
+      document.getElementById(id).scrollIntoView({
         behavior:"smooth"
       });
 
@@ -412,5 +642,4 @@
   </script>
 
 </body>
-
 </html>
