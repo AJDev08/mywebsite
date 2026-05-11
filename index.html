@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Nova Vision</title>
 
   <style>
@@ -20,14 +19,21 @@
 
       font-family:Arial, sans-serif;
 
-      background:#000;
-
       color:white;
 
       overflow-x:hidden;
+
+      background:
+      linear-gradient(
+      180deg,
+      #020617 0%,
+      #0f172a 35%,
+      #111827 70%,
+      #020617 100%
+      );
     }
 
-    .hero{
+    section{
 
       min-height:100vh;
 
@@ -38,50 +44,49 @@
 
       text-align:center;
 
-      padding:20px;
+      padding:100px 20px;
 
       position:relative;
 
-      overflow:hidden;
-
-      background:
-      radial-gradient(circle at top,#2563eb55,transparent 30%),
-      radial-gradient(circle at bottom,#7c3aed55,transparent 35%),
-      #000;
+      background:transparent;
     }
 
-    .glow{
+    .hero::before{
+
+      content:"";
 
       position:absolute;
 
-      width:400px;
-      height:400px;
+      width:500px;
+      height:500px;
+
+      background:#2563eb22;
 
       border-radius:50%;
 
-      background:#2563eb33;
+      filter:blur(120px);
 
-      filter:blur(100px);
-
-      top:-100px;
-      left:-100px;
+      top:-150px;
+      left:-150px;
     }
 
-    .glow2{
+    .hero::after{
+
+      content:"";
 
       position:absolute;
 
-      width:350px;
-      height:350px;
+      width:450px;
+      height:450px;
+
+      background:#7c3aed22;
 
       border-radius:50%;
 
-      background:#7c3aed33;
+      filter:blur(120px);
 
-      filter:blur(100px);
-
-      bottom:-100px;
-      right:-100px;
+      bottom:-150px;
+      right:-150px;
     }
 
     h1{
@@ -97,22 +102,20 @@
 
     .subtitle{
 
-      max-width:700px;
+      max-width:750px;
 
       font-size:24px;
 
-      line-height:1.7;
+      line-height:1.8;
 
       opacity:0.85;
 
       z-index:2;
 
-      animation:fadeUp 1.5s ease;
+      animation:fadeUp 1.4s ease;
     }
 
     .btn-group{
-
-      margin-top:40px;
 
       display:flex;
 
@@ -122,12 +125,14 @@
 
       justify-content:center;
 
+      margin-top:40px;
+
       z-index:2;
     }
 
     button{
 
-      padding:16px 28px;
+      padding:16px 30px;
 
       border:none;
 
@@ -151,40 +156,25 @@
 
     .primary:hover{
 
-      transform:scale(1.08);
+      transform:scale(1.07);
 
-      box-shadow:0 0 25px rgba(56,189,248,0.6);
+      box-shadow:0 0 25px rgba(56,189,248,0.5);
     }
 
     .secondary{
 
-      background:transparent;
+      background:rgba(255,255,255,0.05);
 
       color:white;
 
-      border:1px solid rgba(255,255,255,0.2);
+      border:1px solid rgba(255,255,255,0.08);
     }
 
     .secondary:hover{
 
-      transform:scale(1.08);
+      transform:scale(1.07);
 
       background:rgba(255,255,255,0.08);
-    }
-
-    .info-section{
-
-      min-height:100vh;
-
-      display:flex;
-
-      justify-content:center;
-
-      align-items:center;
-
-      padding:40px 20px;
-
-      background:linear-gradient(180deg,#000,#020617);
     }
 
     .glass{
@@ -193,19 +183,17 @@
 
       max-width:900px;
 
-      padding:50px 35px;
+      padding:55px 35px;
 
       border-radius:30px;
 
-      background:rgba(255,255,255,0.06);
+      background:rgba(255,255,255,0.05);
 
       backdrop-filter:blur(12px);
 
       border:1px solid rgba(255,255,255,0.08);
 
-      box-shadow:0 0 35px rgba(255,255,255,0.06);
-
-      text-align:center;
+      box-shadow:0 0 35px rgba(255,255,255,0.05);
     }
 
     .glass h2{
@@ -217,7 +205,7 @@
 
     .glass p{
 
-      font-size:22px;
+      font-size:21px;
 
       line-height:1.8;
 
@@ -226,15 +214,24 @@
 
     .scroll{
 
-      margin-top:50px;
-
-      font-size:14px;
-
-      letter-spacing:4px;
+      margin-top:60px;
 
       opacity:0.6;
 
+      letter-spacing:4px;
+
+      font-size:14px;
+
       animation:bounce 2s infinite;
+    }
+
+    .divider{
+
+      width:80%;
+
+      height:1px;
+
+      background:rgba(255,255,255,0.08);
     }
 
     @keyframes fadeUp{
@@ -269,22 +266,17 @@
 
   <section class="hero">
 
-    <div class="glow"></div>
-    <div class="glow2"></div>
-
     <h1>Nova Vision</h1>
 
     <p class="subtitle">
-
-      A futuristic digital experience crafted entirely from a phone.
-      Modern design, immersive visuals, and limitless creativity.
-
+      A cinematic digital experience crafted entirely from a phone.
+      Modern web design, immersive visuals, and futuristic interaction.
     </p>
 
     <div class="btn-group">
 
       <button class="primary" onclick="goToPage()">
-        Explore Future
+        Enter Experience
       </button>
 
       <button class="secondary" onclick="scrollToInfo()">
@@ -299,25 +291,23 @@
 
   </section>
 
+  <div class="divider"></div>
 
-  <section class="info-section" id="info">
+  <section id="info">
 
     <div class="glass">
 
-      <h2>Built Different</h2>
+      <h2>Built Without Limits</h2>
 
       <p>
-
-        This website was designed and deployed completely from a mobile phone.
-        Using HTML, CSS, JavaScript, GitHub, and Vercel,
-        it demonstrates how modern web experiences can be created from anywhere.
-
+        This project was fully designed, edited, deployed, and managed
+        using only a mobile phone. HTML, CSS, JavaScript, GitHub, and Vercel
+        combined into a complete web creation workflow.
       </p>
 
     </div>
 
   </section>
-
 
   <script>
 
@@ -332,6 +322,366 @@
       document.getElementById("info").scrollIntoView({
         behavior:"smooth"
       });
+
+    }
+
+  </script>
+
+</body>
+
+</html>
+
+---
+
+🔥 Replace EVERYTHING inside "page2.html"
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Vision</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+
+      font-family:Arial, sans-serif;
+
+      color:white;
+
+      overflow-x:hidden;
+
+      background:
+      linear-gradient(
+      180deg,
+      #020617 0%,
+      #0f172a 35%,
+      #111827 70%,
+      #020617 100%
+      );
+    }
+
+    section{
+
+      min-height:100vh;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+
+      text-align:center;
+
+      padding:100px 20px;
+
+      position:relative;
+
+      background:transparent;
+    }
+
+    .hero::before{
+
+      content:"";
+
+      position:absolute;
+
+      width:500px;
+      height:500px;
+
+      background:#7c3aed22;
+
+      border-radius:50%;
+
+      filter:blur(120px);
+
+      top:-150px;
+      left:-150px;
+    }
+
+    .hero::after{
+
+      content:"";
+
+      position:absolute;
+
+      width:450px;
+      height:450px;
+
+      background:#38bdf822;
+
+      border-radius:50%;
+
+      filter:blur(120px);
+
+      bottom:-150px;
+      right:-150px;
+    }
+
+    h1{
+
+      font-size:68px;
+
+      margin-bottom:20px;
+
+      z-index:2;
+
+      animation:fadeUp 1s ease;
+    }
+
+    .subtitle{
+
+      max-width:760px;
+
+      font-size:24px;
+
+      line-height:1.8;
+
+      opacity:0.85;
+
+      z-index:2;
+
+      animation:fadeUp 1.4s ease;
+    }
+
+    .glass{
+
+      width:90%;
+
+      max-width:900px;
+
+      padding:55px 35px;
+
+      border-radius:30px;
+
+      background:rgba(255,255,255,0.05);
+
+      backdrop-filter:blur(12px);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      box-shadow:0 0 35px rgba(255,255,255,0.05);
+    }
+
+    .glass h2{
+
+      font-size:46px;
+
+      margin-bottom:20px;
+    }
+
+    .glass p{
+
+      font-size:21px;
+
+      line-height:1.8;
+
+      opacity:0.85;
+    }
+
+    .feature-grid{
+
+      width:100%;
+
+      display:flex;
+
+      flex-direction:column;
+
+      gap:25px;
+
+      align-items:center;
+    }
+
+    .feature{
+
+      width:90%;
+
+      max-width:750px;
+
+      padding:35px;
+
+      border-radius:25px;
+
+      background:rgba(255,255,255,0.04);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      transition:0.4s;
+    }
+
+    .feature:hover{
+
+      transform:translateY(-8px);
+
+      box-shadow:0 0 30px rgba(56,189,248,0.12);
+    }
+
+    .feature h3{
+
+      font-size:34px;
+
+      margin-bottom:15px;
+
+      color:#38bdf8;
+    }
+
+    .feature p{
+
+      font-size:19px;
+
+      line-height:1.8;
+
+      opacity:0.85;
+    }
+
+    .divider{
+
+      width:80%;
+
+      height:1px;
+
+      background:rgba(255,255,255,0.08);
+    }
+
+    .back-btn{
+
+      margin-top:40px;
+
+      padding:16px 30px;
+
+      border:none;
+
+      border-radius:16px;
+
+      background:#38bdf8;
+
+      color:black;
+
+      font-size:18px;
+
+      font-weight:bold;
+
+      cursor:pointer;
+
+      transition:0.3s;
+    }
+
+    .back-btn:hover{
+
+      transform:scale(1.07);
+
+      box-shadow:0 0 25px rgba(56,189,248,0.5);
+    }
+
+    @keyframes fadeUp{
+
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <section class="hero">
+
+    <h1>The Future Is Mobile</h1>
+
+    <p class="subtitle">
+      Modern creators no longer need expensive setups.
+      Powerful digital experiences can now be designed, built,
+      and deployed directly from a phone.
+    </p>
+
+  </section>
+
+  <div class="divider"></div>
+
+  <section>
+
+    <div class="glass">
+
+      <h2>Creative Technology</h2>
+
+      <p>
+        Web development combines design, logic, animation, interaction,
+        and storytelling into one immersive medium.
+        Every modern platform begins with code and creativity.
+      </p>
+
+    </div>
+
+  </section>
+
+  <div class="divider"></div>
+
+  <section>
+
+    <div class="feature-grid">
+
+      <div class="feature">
+
+        <h3>Design</h3>
+
+        <p>
+          Elegant layouts, cinematic gradients, glassmorphism,
+          spacing systems, and modern interface principles.
+        </p>
+
+      </div>
+
+      <div class="feature">
+
+        <h3>Interaction</h3>
+
+        <p>
+          Smooth scrolling, transitions, hover effects,
+          animations, and immersive navigation systems.
+        </p>
+
+      </div>
+
+      <div class="feature">
+
+        <h3>Innovation</h3>
+
+        <p>
+          The future of creation is becoming increasingly mobile,
+          fast, accessible, and globally connected.
+        </p>
+
+      </div>
+
+    </div>
+
+    <button class="back-btn" onclick="goBack()">
+      Return Home
+    </button>
+
+  </section>
+
+  <script>
+
+    function goBack(){
+
+      window.location.href = "index.html";
 
     }
 
