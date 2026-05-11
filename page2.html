@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nova Vision</title>
 
   <style>
@@ -15,143 +16,236 @@
     }
 
     body{
+
       font-family:Arial, sans-serif;
-      background:#000;
+
       color:white;
+
       overflow-x:hidden;
+
+      background:
+      linear-gradient(
+      180deg,
+      #020617 0%,
+      #0f172a 35%,
+      #111827 70%,
+      #020617 100%
+      );
     }
 
     section{
+
       min-height:100vh;
+
       display:flex;
       justify-content:center;
       align-items:center;
       flex-direction:column;
+
       text-align:center;
-      padding:40px 20px;
+
+      padding:100px 20px;
+
       position:relative;
+
+      background:transparent;
     }
 
-    .hero{
-      background:
-      radial-gradient(circle at top,#1e3a8a 0%,transparent 40%),
-      radial-gradient(circle at bottom,#7c3aed 0%,transparent 35%),
-      #000;
+    .hero::before{
+
+      content:"";
+
+      position:absolute;
+
+      width:500px;
+      height:500px;
+
+      background:#7c3aed22;
+
+      border-radius:50%;
+
+      filter:blur(120px);
+
+      top:-150px;
+      left:-150px;
     }
 
-    .hero h1{
-      font-size:65px;
-      font-weight:bold;
+    .hero::after{
+
+      content:"";
+
+      position:absolute;
+
+      width:450px;
+      height:450px;
+
+      background:#38bdf822;
+
+      border-radius:50%;
+
+      filter:blur(120px);
+
+      bottom:-150px;
+      right:-150px;
+    }
+
+    h1{
+
+      font-size:68px;
+
       margin-bottom:20px;
+
+      z-index:2;
+
       animation:fadeUp 1s ease;
     }
 
-    .hero p{
-      font-size:22px;
-      max-width:700px;
-      line-height:1.7;
+    .subtitle{
+
+      max-width:760px;
+
+      font-size:24px;
+
+      line-height:1.8;
+
       opacity:0.85;
-      animation:fadeUp 1.5s ease;
+
+      z-index:2;
+
+      animation:fadeUp 1.4s ease;
     }
 
-    .scroll-text{
-      margin-top:60px;
-      opacity:0.6;
-      font-size:14px;
-      letter-spacing:3px;
-      animation:bounce 2s infinite;
-    }
+    .glass{
 
-    .glass-card{
       width:90%;
+
       max-width:900px;
-      background:rgba(255,255,255,0.08);
-      border:1px solid rgba(255,255,255,0.1);
-      backdrop-filter:blur(10px);
+
+      padding:55px 35px;
+
       border-radius:30px;
-      padding:50px 30px;
-      box-shadow:0 0 40px rgba(255,255,255,0.08);
+
+      background:rgba(255,255,255,0.05);
+
+      backdrop-filter:blur(12px);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      box-shadow:0 0 35px rgba(255,255,255,0.05);
     }
 
-    .glass-card h2{
-      font-size:45px;
+    .glass h2{
+
+      font-size:46px;
+
       margin-bottom:20px;
     }
 
-    .glass-card p{
-      font-size:20px;
+    .glass p{
+
+      font-size:21px;
+
       line-height:1.8;
+
       opacity:0.85;
     }
 
-    .features{
-      background:linear-gradient(180deg,#000,#020617);
-      gap:30px;
-    }
+    .feature-grid{
 
-    .feature-box{
       width:100%;
-      max-width:700px;
-      background:#0f172a;
-      border-radius:25px;
+
+      display:flex;
+
+      flex-direction:column;
+
+      gap:25px;
+
+      align-items:center;
+    }
+
+    .feature{
+
+      width:90%;
+
+      max-width:750px;
+
       padding:35px;
-      transition:0.4s;
+
+      border-radius:25px;
+
+      background:rgba(255,255,255,0.04);
+
       border:1px solid rgba(255,255,255,0.08);
+
+      transition:0.4s;
     }
 
-    .feature-box:hover{
-      transform:translateY(-10px) scale(1.02);
-      box-shadow:0 0 35px rgba(56,189,248,0.3);
+    .feature:hover{
+
+      transform:translateY(-8px);
+
+      box-shadow:0 0 30px rgba(56,189,248,0.12);
     }
 
-    .feature-box h3{
+    .feature h3{
+
       font-size:34px;
+
       margin-bottom:15px;
+
       color:#38bdf8;
     }
 
-    .feature-box p{
-      font-size:18px;
-      line-height:1.7;
-      opacity:0.85;
-    }
+    .feature p{
 
-    .future{
-      background:
-      linear-gradient(135deg,#020617,#111827,#1e1b4b);
-    }
+      font-size:19px;
 
-    .future h2{
-      font-size:55px;
-      margin-bottom:20px;
-    }
-
-    .future p{
-      font-size:22px;
-      max-width:750px;
       line-height:1.8;
+
       opacity:0.85;
+    }
+
+    .divider{
+
+      width:80%;
+
+      height:1px;
+
+      background:rgba(255,255,255,0.08);
     }
 
     .back-btn{
+
       margin-top:40px;
-      padding:16px 28px;
+
+      padding:16px 30px;
+
       border:none;
-      border-radius:15px;
-      font-size:18px;
-      font-weight:bold;
-      cursor:pointer;
+
+      border-radius:16px;
+
       background:#38bdf8;
+
       color:black;
+
+      font-size:18px;
+
+      font-weight:bold;
+
+      cursor:pointer;
+
       transition:0.3s;
     }
 
     .back-btn:hover{
-      transform:scale(1.08);
-      box-shadow:0 0 20px rgba(56,189,248,0.6);
+
+      transform:scale(1.07);
+
+      box-shadow:0 0 25px rgba(56,189,248,0.5);
     }
 
     @keyframes fadeUp{
+
       from{
         opacity:0;
         transform:translateY(40px);
@@ -163,92 +257,82 @@
       }
     }
 
-    @keyframes bounce{
-      0%,100%{
-        transform:translateY(0);
-      }
-
-      50%{
-        transform:translateY(10px);
-      }
-    }
-
   </style>
+
 </head>
 
 <body>
 
   <section class="hero">
 
-    <h1>Nova Vision</h1>
+    <h1>The Future Is Mobile</h1>
 
-    <p>
-      A futuristic experience designed for creators, dreamers,
-      and people building the next generation directly from their phones.
+    <p class="subtitle">
+      Modern creators no longer need expensive setups.
+      Powerful digital experiences can now be designed, built,
+      and deployed directly from a phone.
     </p>
-
-    <div class="scroll-text">
-      SCROLL DOWN
-    </div>
 
   </section>
 
+  <div class="divider"></div>
 
   <section>
 
-    <div class="glass-card">
+    <div class="glass">
 
-      <h2>The Future Is Mobile</h2>
+      <h2>Creative Technology</h2>
 
       <p>
-        You no longer need expensive setups or giant offices to create something real.
-        A single phone, internet connection, and creativity are enough to launch ideas,
-        websites, businesses, and even startups.
+        Web development combines design, logic, animation, interaction,
+        and storytelling into one immersive medium.
+        Every modern platform begins with code and creativity.
       </p>
 
     </div>
 
   </section>
 
+  <div class="divider"></div>
 
-  <section class="features">
+  <section>
 
-    <div class="feature-box">
-      <h3>Design</h3>
-      <p>
-        Beautiful interfaces with modern layouts, animations,
-        gradients, glassmorphism, and immersive experiences.
-      </p>
+    <div class="feature-grid">
+
+      <div class="feature">
+
+        <h3>Design</h3>
+
+        <p>
+          Elegant layouts, cinematic gradients, glassmorphism,
+          spacing systems, and modern interface principles.
+        </p>
+
+      </div>
+
+      <div class="feature">
+
+        <h3>Interaction</h3>
+
+        <p>
+          Smooth scrolling, transitions, hover effects,
+          animations, and immersive navigation systems.
+        </p>
+
+      </div>
+
+      <div class="feature">
+
+        <h3>Innovation</h3>
+
+        <p>
+          The future of creation is becoming increasingly mobile,
+          fast, accessible, and globally connected.
+        </p>
+
+      </div>
+
     </div>
-
-    <div class="feature-box">
-      <h3>Performance</h3>
-      <p>
-        Fast-loading pages optimized for phones and modern browsers,
-        inspired by premium technology websites.
-      </p>
-    </div>
-
-    <div class="feature-box">
-      <h3>Innovation</h3>
-      <p>
-        The web is becoming more interactive every year.
-        Learning frontend development today opens massive opportunities.
-      </p>
-    </div>
-
-  </section>
-
-
-  <section class="future">
-
-    <h2>Create Without Limits</h2>
-
-    <p>
-      This page was built with HTML, CSS, and JavaScript.
-      Every effect you see — scrolling, animations, layout, transitions —
-      comes from code you can learn step-by-step.
-    </p>
 
     <button class="back-btn" onclick="goBack()">
       Return Home
@@ -256,14 +340,16 @@
 
   </section>
 
-
   <script>
 
     function goBack(){
+
       window.location.href = "index.html";
+
     }
 
   </script>
 
 </body>
+
 </html>
