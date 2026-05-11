@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nova Vision</title>
+
+  <title>Nova Markets</title>
 
   <style>
 
@@ -27,9 +28,8 @@
       linear-gradient(
       180deg,
       #020617 0%,
-      #0f172a 35%,
-      #111827 70%,
-      #020617 100%
+      #0f172a 40%,
+      #111827 100%
       );
     }
 
@@ -47,8 +47,6 @@
       padding:100px 20px;
 
       position:relative;
-
-      background:transparent;
     }
 
     .hero::before{
@@ -60,7 +58,7 @@
       width:500px;
       height:500px;
 
-      background:#2563eb22;
+      background:#38bdf822;
 
       border-radius:50%;
 
@@ -91,18 +89,16 @@
 
     h1{
 
-      font-size:72px;
-
-      z-index:2;
+      font-size:76px;
 
       margin-bottom:20px;
 
-      animation:fadeUp 1s ease;
+      z-index:2;
     }
 
     .subtitle{
 
-      max-width:750px;
+      max-width:760px;
 
       font-size:24px;
 
@@ -111,11 +107,9 @@
       opacity:0.85;
 
       z-index:2;
-
-      animation:fadeUp 1.4s ease;
     }
 
-    .btn-group{
+    .buttons{
 
       display:flex;
 
@@ -125,7 +119,7 @@
 
       justify-content:center;
 
-      margin-top:40px;
+      margin-top:45px;
 
       z-index:2;
     }
@@ -177,7 +171,84 @@
       background:rgba(255,255,255,0.08);
     }
 
-    .glass{
+    .scroll{
+
+      margin-top:60px;
+
+      font-size:14px;
+
+      letter-spacing:4px;
+
+      opacity:0.6;
+
+      animation:bounce 2s infinite;
+    }
+
+    .divider{
+
+      width:80%;
+
+      height:1px;
+
+      margin:auto;
+
+      background:rgba(255,255,255,0.08);
+    }
+
+    .features{
+
+      width:100%;
+
+      display:grid;
+
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+      gap:25px;
+
+      max-width:1100px;
+    }
+
+    .card{
+
+      background:rgba(255,255,255,0.05);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      backdrop-filter:blur(10px);
+
+      border-radius:25px;
+
+      padding:35px;
+
+      transition:0.4s;
+    }
+
+    .card:hover{
+
+      transform:translateY(-10px);
+
+      box-shadow:0 0 30px rgba(56,189,248,0.12);
+    }
+
+    .card h2{
+
+      font-size:32px;
+
+      margin-bottom:18px;
+
+      color:#38bdf8;
+    }
+
+    .card p{
+
+      font-size:18px;
+
+      line-height:1.8;
+
+      opacity:0.85;
+    }
+
+    .info-box{
 
       width:90%;
 
@@ -196,55 +267,20 @@
       box-shadow:0 0 35px rgba(255,255,255,0.05);
     }
 
-    .glass h2{
+    .info-box h2{
 
-      font-size:48px;
+      font-size:50px;
 
       margin-bottom:20px;
     }
 
-    .glass p{
+    .info-box p{
 
-      font-size:21px;
+      font-size:22px;
 
-      line-height:1.8;
+      line-height:1.9;
 
       opacity:0.85;
-    }
-
-    .scroll{
-
-      margin-top:60px;
-
-      opacity:0.6;
-
-      letter-spacing:4px;
-
-      font-size:14px;
-
-      animation:bounce 2s infinite;
-    }
-
-    .divider{
-
-      width:80%;
-
-      height:1px;
-
-      background:rgba(255,255,255,0.08);
-    }
-
-    @keyframes fadeUp{
-
-      from{
-        opacity:0;
-        transform:translateY(40px);
-      }
-
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
     }
 
     @keyframes bounce{
@@ -266,20 +302,22 @@
 
   <section class="hero">
 
-    <h1>Nova Vision</h1>
+    <h1>Nova Markets</h1>
 
     <p class="subtitle">
-      A cinematic digital experience crafted entirely from a phone.
-      Modern web design, immersive visuals, and futuristic interaction.
+
+      A futuristic financial dashboard tracking crypto markets,
+      digital assets, and market intelligence in real time.
+
     </p>
 
-    <div class="btn-group">
+    <div class="buttons">
 
-      <button class="primary" onclick="goToPage()">
-        Enter Experience
+      <button class="primary" onclick="openDashboard()">
+        Open Dashboard
       </button>
 
-      <button class="secondary" onclick="scrollToInfo()">
+      <button class="secondary" onclick="scrollInfo()">
         Learn More
       </button>
 
@@ -293,16 +331,62 @@
 
   <div class="divider"></div>
 
+  <section>
+
+    <div class="features">
+
+      <div class="card">
+
+        <h2>Live Crypto</h2>
+
+        <p>
+          Track real-time cryptocurrency prices powered by public APIs
+          with instant updates and modern dashboard visuals.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h2>Market Data</h2>
+
+        <p>
+          Monitor financial information, digital assets,
+          and future integrations for precious metals and analytics.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h2>Mobile Built</h2>
+
+        <p>
+          Fully designed, edited, and deployed directly from a phone
+          using modern web technologies and cloud deployment tools.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <div class="divider"></div>
+
   <section id="info">
 
-    <div class="glass">
+    <div class="info-box">
 
-      <h2>Built Without Limits</h2>
+      <h2>Modern Web Applications</h2>
 
       <p>
-        This project was fully designed, edited, deployed, and managed
-        using only a mobile phone. HTML, CSS, JavaScript, GitHub, and Vercel
-        combined into a complete web creation workflow.
+
+        Websites are evolving into full applications capable of displaying
+        live financial data, analytics, dashboards, and interactive systems.
+        This project combines frontend development, APIs, and modern UI design
+        into a real market-focused web experience.
+
       </p>
 
     </div>
@@ -311,13 +395,13 @@
 
   <script>
 
-    function goToPage(){
+    function openDashboard(){
 
       window.location.href = "page2.html";
 
     }
 
-    function scrollToInfo(){
+    function scrollInfo(){
 
       document.getElementById("info").scrollIntoView({
         behavior:"smooth"
