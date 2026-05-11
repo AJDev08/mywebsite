@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>World Meter</title>
+  <title>Nova Vision</title>
 
   <style>
 
@@ -13,65 +13,125 @@
       margin:0;
       padding:0;
       box-sizing:border-box;
+      scroll-behavior:smooth;
     }
 
     body{
-      height:100vh;
+
+      font-family:Arial, sans-serif;
+
+      background:#000;
+
+      color:white;
+
+      overflow-x:hidden;
+    }
+
+    .hero{
+
+      min-height:100vh;
 
       display:flex;
       justify-content:center;
       align-items:center;
-
-      background: linear-gradient(135deg,#0f172a,#1e3a8a);
-
-      font-family: Poppins, Arial, sans-serif;
-
-      overflow:hidden;
-      color:white;
-    }
-
-    .card{
-
-      width:340px;
-
-      padding:40px;
+      flex-direction:column;
 
       text-align:center;
 
-      border-radius:25px;
+      padding:20px;
 
-      background: rgba(255,255,255,0.08);
+      position:relative;
 
-      backdrop-filter: blur(10px);
+      overflow:hidden;
 
-      box-shadow:0 0 25px rgba(0,0,0,0.4);
+      background:
+      radial-gradient(circle at top,#2563eb55,transparent 30%),
+      radial-gradient(circle at bottom,#7c3aed55,transparent 35%),
+      #000;
+    }
 
-      animation: float 3s ease-in-out infinite;
+    .glow{
+
+      position:absolute;
+
+      width:400px;
+      height:400px;
+
+      border-radius:50%;
+
+      background:#2563eb33;
+
+      filter:blur(100px);
+
+      top:-100px;
+      left:-100px;
+    }
+
+    .glow2{
+
+      position:absolute;
+
+      width:350px;
+      height:350px;
+
+      border-radius:50%;
+
+      background:#7c3aed33;
+
+      filter:blur(100px);
+
+      bottom:-100px;
+      right:-100px;
     }
 
     h1{
-      font-size:42px;
-      margin-bottom:15px;
+
+      font-size:72px;
+
+      z-index:2;
+
+      margin-bottom:20px;
+
+      animation:fadeUp 1s ease;
     }
 
-    p{
-      font-size:18px;
-      opacity:0.9;
-      margin-bottom:25px;
-      line-height:1.5;
+    .subtitle{
+
+      max-width:700px;
+
+      font-size:24px;
+
+      line-height:1.7;
+
+      opacity:0.85;
+
+      z-index:2;
+
+      animation:fadeUp 1.5s ease;
+    }
+
+    .btn-group{
+
+      margin-top:40px;
+
+      display:flex;
+
+      gap:20px;
+
+      flex-wrap:wrap;
+
+      justify-content:center;
+
+      z-index:2;
     }
 
     button{
 
-      padding:14px 24px;
+      padding:16px 28px;
 
       border:none;
 
-      border-radius:14px;
-
-      background:#38bdf8;
-
-      color:black;
+      border-radius:16px;
 
       font-size:18px;
 
@@ -82,22 +142,122 @@
       transition:0.3s;
     }
 
-    button:hover{
-      transform:scale(1.08);
+    .primary{
+
+      background:#38bdf8;
+
+      color:black;
     }
 
-    @keyframes float{
+    .primary:hover{
 
-      0%{
-        transform: translateY(0px);
+      transform:scale(1.08);
+
+      box-shadow:0 0 25px rgba(56,189,248,0.6);
+    }
+
+    .secondary{
+
+      background:transparent;
+
+      color:white;
+
+      border:1px solid rgba(255,255,255,0.2);
+    }
+
+    .secondary:hover{
+
+      transform:scale(1.08);
+
+      background:rgba(255,255,255,0.08);
+    }
+
+    .info-section{
+
+      min-height:100vh;
+
+      display:flex;
+
+      justify-content:center;
+
+      align-items:center;
+
+      padding:40px 20px;
+
+      background:linear-gradient(180deg,#000,#020617);
+    }
+
+    .glass{
+
+      width:90%;
+
+      max-width:900px;
+
+      padding:50px 35px;
+
+      border-radius:30px;
+
+      background:rgba(255,255,255,0.06);
+
+      backdrop-filter:blur(12px);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      box-shadow:0 0 35px rgba(255,255,255,0.06);
+
+      text-align:center;
+    }
+
+    .glass h2{
+
+      font-size:48px;
+
+      margin-bottom:20px;
+    }
+
+    .glass p{
+
+      font-size:22px;
+
+      line-height:1.8;
+
+      opacity:0.85;
+    }
+
+    .scroll{
+
+      margin-top:50px;
+
+      font-size:14px;
+
+      letter-spacing:4px;
+
+      opacity:0.6;
+
+      animation:bounce 2s infinite;
+    }
+
+    @keyframes fadeUp{
+
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes bounce{
+
+      0%,100%{
+        transform:translateY(0);
       }
 
       50%{
-        transform: translateY(-10px);
-      }
-
-      100%{
-        transform: translateY(0px);
+        transform:translateY(10px);
       }
     }
 
@@ -107,25 +267,71 @@
 
 <body>
 
-  <div class="card">
+  <section class="hero">
 
-    <h1>Welcome 🌏</h1>
+    <div class="glow"></div>
+    <div class="glow2"></div>
 
-    <p>
-      I built this website as a test to see whether it works or not.
+    <h1>Nova Vision</h1>
+
+    <p class="subtitle">
+
+      A futuristic digital experience crafted entirely from a phone.
+      Modern design, immersive visuals, and limitless creativity.
+
     </p>
 
-    <button onclick="goToPage()">
-      Explore
-    </button>
+    <div class="btn-group">
 
-  </div>
+      <button class="primary" onclick="goToPage()">
+        Explore Future
+      </button>
+
+      <button class="secondary" onclick="scrollToInfo()">
+        Learn More
+      </button>
+
+    </div>
+
+    <div class="scroll">
+      SCROLL DOWN
+    </div>
+
+  </section>
+
+
+  <section class="info-section" id="info">
+
+    <div class="glass">
+
+      <h2>Built Different</h2>
+
+      <p>
+
+        This website was designed and deployed completely from a mobile phone.
+        Using HTML, CSS, JavaScript, GitHub, and Vercel,
+        it demonstrates how modern web experiences can be created from anywhere.
+
+      </p>
+
+    </div>
+
+  </section>
+
 
   <script>
 
     function goToPage(){
 
       window.location.href = "page2.html";
+
+    }
+
+    function scrollToInfo(){
+
+      document.getElementById("info").scrollIntoView({
+        behavior:"smooth"
+      });
 
     }
 
